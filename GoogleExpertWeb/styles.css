@@ -1,0 +1,155 @@
+body{
+    background: rgb(0,0,0.9);
+    margin:0; 
+    color:#fff; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* utlities */ 
+.container {
+    max-width: 960px;
+    overflow: hidden;
+    margin: auto; 
+    padding: 4rem 1rem; 
+
+}
+.bg-light{
+    background: #f4f4f4;
+    color: #333;
+}
+.bg-dark{
+background: #333;
+color: #f4f4f4;
+}
+.center{
+    text-align: center;
+    margin: auto; 
+}
+
+/* start showcase */ 
+#showcase::after{
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background: url("background.png") no-repeat center/cover;
+    display:block ; 
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms; 
+}
+#showcase:hover::after{
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+#showcase:hover .content{
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+.content{
+position:absolute;
+z-index: 1;
+top:5%; 
+left:50%;
+text-align: center;
+margin-top: 105px; 
+margin-left: -145px;
+width: 300px;
+height: 350px;
+transition: all 1000ms; 
+}
+
+.content .logo{
+height: 180px; 
+width: 180px; 
+filter: brightness(90%);
+}
+.content h1{
+font-size: 2.2rem; 
+margin-top: 0; 
+text-transform: uppercase;
+}
+.content > p {
+    line-height: 1.7; 
+    margin-top: -10px; 
+}
+
+/* end showcase */ 
+
+/* start services */ 
+#servcies{
+    display:grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+}
+/* start services */ 
+/* start About */ 
+#about {
+    display:grid;
+    grid-gap:20px;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.button {
+    background-color: #70bcf3; /* blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .button1{
+    background-color: #bd6aea; /* Green */
+  }
+  
+/* end About */ 
+
+/* start footer */ 
+footer {
+    padding: 1.5rem;
+}
+footer p {
+    margin: 0; 
+    font-weight: bold;
+}
+/* end footer */ 
+
+/* responsive page */ 
+@media (max-width:560px){
+    #showcaee::after{
+    height: 50vh;
+    }
+
+    .content{
+        top: 5%;
+        margin-top:100px;
+
+    }
+
+    .content .logo{
+        height: 140px;
+        width: 140px;
+    }
+    .content p{
+        display: none;
+    }
+    #servcies{
+        grid-template-columns: 1fr;
+        border-bottom: #333 dashed 1px;
+        padding: 1.2rem 1rem;
+    }
+    #about {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }   
+
+}
+
+@media(max-height:500px){
+    .content h1,
+    .content p{
+        display: none; 
+    }
+}
